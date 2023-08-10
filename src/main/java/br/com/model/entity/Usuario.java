@@ -1,74 +1,54 @@
 package br.com.model.entity;
 
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of = "codUsuario")
+public class Usuario implements Serializable {
 
+	private static final long serialVersionUID = -6790812289435529138L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name = "usuario_seg_generetor", sequenceName = "usuario_id_seg", allocationSize = 1)
+	@GeneratedValue(generator = "usuario_seg_generetor", strategy = GenerationType.IDENTITY)
 	private Long codUsuario;
+	
+	@NotBlank
+	@Column(nullable = false)
 	private String nome;
+	
+	@NotBlank
+	@Column(nullable = false)
 	private String email;
+	
+	@NotBlank
+	@Column(nullable = false)
 	private String password;
 
-	@OneToOne(mappedBy = "usuario")
+	@OneToOne
+	@JoinColumn(name = "codConta", foreignKey = @ForeignKey(name = "FK_conta_id"))
 	private Conta conta;
-
-	public Usuario() {
-	}
-
-	public Usuario(String nome, String email, String password, Conta conta) {
-		this.nome = nome;
-		this.email = email;
-		this.password = password;
-		this.conta = conta;
-	}
-
-	public Long getCodUsuario() {
-		return codUsuario;
-	}
-
-	public void setCodUsuario(Long codUsuario) {
-		this.codUsuario = codUsuario;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Conta getConta() {
-		return conta;
-	}
-
-	public void setConta(Conta conta) {
-		this.conta = conta;
-	}
 
 }

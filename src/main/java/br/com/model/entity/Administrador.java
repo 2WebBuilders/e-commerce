@@ -1,17 +1,33 @@
 package br.com.model.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "administrador")
-public class Administrador {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of = "codAdministrador")
+public class Administrador implements Serializable {
+
+	private static final long serialVersionUID = 1588993797149289893L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name = "administrador_seg_administrador", sequenceName = "administrador_id_seg", allocationSize = 1)
+	@GeneratedValue(generator = "administrador_seg_administrador", strategy = GenerationType.IDENTITY)
 	private Long codAdministrador;
 
 	private String nome;
@@ -20,61 +36,5 @@ public class Administrador {
 	private String tokenBancoAssas;
 	private String chavePix;
 	private String cobrancas;
-
-	public Long getCodAdministrador() {
-		return codAdministrador;
-	}
-
-	public void setCodAdministrador(Long codAdministrador) {
-		this.codAdministrador = codAdministrador;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getTokenBancoAssas() {
-		return tokenBancoAssas;
-	}
-
-	public void setTokenBancoAssas(String tokenBancoAssas) {
-		this.tokenBancoAssas = tokenBancoAssas;
-	}
-
-	public String getChavePix() {
-		return chavePix;
-	}
-
-	public void setChavePix(String chavePix) {
-		this.chavePix = chavePix;
-	}
-
-	public String getCobrancas() {
-		return cobrancas;
-	}
-
-	public void setCobrancas(String cobrancas) {
-		this.cobrancas = cobrancas;
-	}
 
 }

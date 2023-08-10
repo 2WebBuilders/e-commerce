@@ -1,64 +1,49 @@
 package br.com.model.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "extrato")
-public class Extrato {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of = "codExtrato")
+public class Extrato implements Serializable {
 
+	private static final long serialVersionUID = 6819286773034260346L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idExtrato;
-	private LocalDateTime dataTransacao;
-	private String descricao;
-	private BigDecimal valor;
+	@SequenceGenerator(name = "extrato_seg_generetor", sequenceName = "extrato_id_seg", allocationSize = 1)
+	@GeneratedValue(generator = "extrato_seg_generetor", strategy = GenerationType.IDENTITY)
+	private Long codExtrato;
+	
+	@OneToMany(mappedBy = "extrato", cascade = CascadeType.ALL)
+	@JsonManagedReference
+	private List<Lancamento> lancamentos;
+	
+	@NotBlank
+	@Column(nullable = false)
 	private BigDecimal saldoAtual;
-
-	public Long getIdExtrato() {
-		return idExtrato;
-	}
-
-	public void setIdExtrato(Long idExtrato) {
-		this.idExtrato = idExtrato;
-	}
-
-	public LocalDateTime getDataTransacao() {
-		return dataTransacao;
-	}
-
-	public void setDataTransacao(LocalDateTime dataTransacao) {
-		this.dataTransacao = dataTransacao;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public BigDecimal getValor() {
-		return valor;
-	}
-
-	public void setValor(BigDecimal valor) {
-		this.valor = valor;
-	}
-
-	public BigDecimal getSaldoAtual() {
-		return saldoAtual;
-	}
-
-	public void setSaldoAtual(BigDecimal saldoAtual) {
-		this.saldoAtual = saldoAtual;
-	}
 
 }

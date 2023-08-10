@@ -1,59 +1,58 @@
 package br.com.model.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "conta")
-public class Conta {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of = "codConta")
+public class Conta implements Serializable {
 
+	private static final long serialVersionUID = 491671084027579853L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name = "conta_seg_generetor", sequenceName = "conta_id_seg", allocationSize = 1)
+	@GeneratedValue(generator = "conta_seg_generetor", strategy = GenerationType.IDENTITY)
 	private Long codConta;
+	
+	@OneToOne(mappedBy = "conta")
+	@JsonIgnore
+	private Usuario usuario;
+	
+	@OneToOne
+	@JoinColumn(name = "codExtrato", foreignKey = @ForeignKey(name = "FK_extrato_id"))
 	private Extrato extrato;
+	
+	@OneToOne(mappedBy = "conta")
+	@JsonIgnore
+	private Pedido pedido;
+	
+	@NotBlank
+	@Column(nullable = false)
 	private BigDecimal saldo;
 
-	@OneToOne
-	@JoinColumn(name = "usuario_id")
-	private Usuario codigoUsuario;
-
-	public Long getCodConta() {
-		return codConta;
-	}
-
-	public void setCodConta(Long codConta) {
-		this.codConta = codConta;
-	}
-
-	public Extrato getExtrato() {
-		return extrato;
-	}
-
-	public void setExtrato(Extrato extrato) {
-		this.extrato = extrato;
-	}
-
-	public BigDecimal getSaldo() {
-		return saldo;
-	}
-
-	public void setSaldo(BigDecimal saldo) {
-		this.saldo = saldo;
-	}
-
-	public Usuario getCodigoUsuario() {
-		return codigoUsuario;
-	}
-
-	public void setCodigoUsuario(Usuario codigoUsuario) {
-		this.codigoUsuario = codigoUsuario;
-	}
 
 }
