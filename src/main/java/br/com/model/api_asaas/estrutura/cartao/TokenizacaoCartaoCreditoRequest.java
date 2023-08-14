@@ -17,7 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class TokenizacaoRequest {
+public class TokenizacaoCartaoCreditoRequest {
 
 	@SerializedName("customer")
 	@Expose

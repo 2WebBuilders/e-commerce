@@ -1,5 +1,7 @@
 package br.com.model.api_asaas.estrutura.auxiliar;
 
+import java.util.Optional;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -14,22 +16,25 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class Reparticao {
+public class Rateio {
 
 	@SerializedName("walletId")
 	@Expose
 	private String walletId;
 	@SerializedName("fixedValue")
 	@Expose
-	private Integer fixedValue;
+	private Optional<Integer> fixedValue;
+	@SerializedName("totalFixedValue")
+	@Expose
+	private Optional<Integer> totalFixedValue;
 	@SerializedName("status")
 	@Expose
 	private String status;
 	@SerializedName("refusalReason")
 	@Expose
-	private Object refusalReason;
+	private Optional<Object> refusalReason;
 	@SerializedName("percentualValue")
 	@Expose
-	private Integer percentualValue;
+	private Optional<Integer> percentualValue;
 
 }

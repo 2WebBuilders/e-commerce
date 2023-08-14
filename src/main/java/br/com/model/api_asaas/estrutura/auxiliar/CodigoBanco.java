@@ -1,4 +1,4 @@
-package br.com.model.api_asaas.estrutura.cartao;
+package br.com.model.api_asaas.estrutura.auxiliar;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -14,16 +14,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class TokenizacaoCartaoCreditoResponse {
+public class CodigoBanco {
 
-	@SerializedName("creditCardNumber")
+	@SerializedName("ispb")
 	@Expose
-	private String creditCardNumber;
-	@SerializedName("creditCardBrand")
+	public String ispb;
+	@SerializedName("code")
 	@Expose
-	private String creditCardBrand;
-	@SerializedName("creditCardToken")
+	public String code;
+	@SerializedName("name")
 	@Expose
-	private String creditCardToken;
+	public String name;
 
 }

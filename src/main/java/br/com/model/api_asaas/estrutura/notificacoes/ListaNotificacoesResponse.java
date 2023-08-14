@@ -1,9 +1,12 @@
-package br.com.model.api_asaas.estrutura.cartao;
+package br.com.model.api_asaas.estrutura.notificacoes;
+
+import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import jakarta.annotation.Generated;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,16 +17,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class TokenizacaoCartaoCreditoResponse {
+public class ListaNotificacoesResponse {
 
-	@SerializedName("creditCardNumber")
+	@SerializedName("notifications")
 	@Expose
-	private String creditCardNumber;
-	@SerializedName("creditCardBrand")
-	@Expose
-	private String creditCardBrand;
-	@SerializedName("creditCardToken")
-	@Expose
-	private String creditCardToken;
+	@Valid
+	public List<NotificacoesResponse> notifications;
 
 }
