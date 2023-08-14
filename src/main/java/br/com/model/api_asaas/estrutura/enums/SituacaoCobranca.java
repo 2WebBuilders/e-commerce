@@ -1,6 +1,13 @@
 package br.com.model.api_asaas.estrutura.enums;
 
-public enum StatusCobranca {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+public enum SituacaoCobranca {
 
 	PENDING ("Aguardando pagamento"), 
 	RECEIVED ("Recebida (saldo já creditado na conta)"), 
@@ -15,15 +22,8 @@ public enum StatusCobranca {
 	AWAITING_CHARGEBACK_REVERSAL("Disputa vencida, aguardando repasse da adquirente"), 
 	DUNNING_REQUESTED ("Em processo de negativação"), 
 	DUNNING_RECEIVED ("Recuperada"), 
-	AWAITING_RISK_ANALYSIS("Pagamento em análise");
+	AWAITING_RISK_ANALYSIS ("Pagamento em análise");
 
-	private String descricao;
+	private String situacao;
 
-	StatusCobranca(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
 }
