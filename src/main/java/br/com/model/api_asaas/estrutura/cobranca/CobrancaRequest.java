@@ -11,7 +11,7 @@ import br.com.model.api_asaas.estrutura.auxiliar.Desconto;
 import br.com.model.api_asaas.estrutura.auxiliar.Juros;
 import br.com.model.api_asaas.estrutura.auxiliar.Multa;
 import br.com.model.api_asaas.estrutura.auxiliar.Redirecionamento;
-import br.com.model.api_asaas.estrutura.auxiliar.Reparticao;
+import br.com.model.api_asaas.estrutura.auxiliar.Rateio;
 import br.com.model.api_asaas.estrutura.auxiliar.TitularCartaoCredito;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
@@ -69,7 +69,7 @@ public class CobrancaRequest {
 	@SerializedName("split")
 	@Expose
 	@Valid
-	private List<Reparticao> split;
+	private List<Rateio> split;
 	@SerializedName("creditCard")
 	@Expose
 	@Valid

@@ -9,8 +9,9 @@ import br.com.model.api_asaas.estrutura.auxiliar.Desconto;
 import br.com.model.api_asaas.estrutura.auxiliar.Estorno;
 import br.com.model.api_asaas.estrutura.auxiliar.Juros;
 import br.com.model.api_asaas.estrutura.auxiliar.Multa;
-import br.com.model.api_asaas.estrutura.auxiliar.Reparticao;
-import br.com.model.api_asaas.estrutura.cartao.TokenizacaoResponse;
+import br.com.model.api_asaas.estrutura.auxiliar.Rateio;
+import br.com.model.api_asaas.estrutura.auxiliar.Reembolsos;
+import br.com.model.api_asaas.estrutura.cartao.TokenizacaoCartaoCreditoResponse;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -130,7 +131,7 @@ public class PagamentoResponse {
 	@SerializedName("creditCard")
 	@Expose
 	@Valid
-	private TokenizacaoResponse creditCard;
+	private TokenizacaoCartaoCreditoResponse creditCard;
 	@SerializedName("discount")
 	@Expose
 	@Valid
@@ -146,13 +147,14 @@ public class PagamentoResponse {
 	@SerializedName("split")
 	@Expose
 	@Valid
-	private List<Reparticao> split;
+	private List<Rateio> split;
 	@SerializedName("chargeback")
 	@Expose
 	@Valid
 	private Estorno chargeback;
 	@SerializedName("refunds")
 	@Expose
-	private Object refunds;
+	@Valid
+	private List<Reembolsos> refunds;
 
 }

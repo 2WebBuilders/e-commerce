@@ -9,8 +9,9 @@ import com.google.gson.annotations.SerializedName;
 import br.com.model.api_asaas.estrutura.auxiliar.Desconto;
 import br.com.model.api_asaas.estrutura.auxiliar.Juros;
 import br.com.model.api_asaas.estrutura.auxiliar.Multa;
+import br.com.model.api_asaas.estrutura.auxiliar.Rateio;
 import br.com.model.api_asaas.estrutura.auxiliar.Reembolsos;
-import br.com.model.api_asaas.estrutura.cartao.TokenizacaoResponse;
+import br.com.model.api_asaas.estrutura.cartao.TokenizacaoCartaoCreditoResponse;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -146,6 +147,10 @@ public class CobrancaResponse {
 	@SerializedName("creditCard")
 	@Expose
 	@Valid
-	private Optional<TokenizacaoResponse> creditCard;
+	private Optional<TokenizacaoCartaoCreditoResponse> creditCard;
+	@SerializedName("split")
+	@Expose
+	@Valid
+	private Optional<List<Rateio>> split;
 
 }

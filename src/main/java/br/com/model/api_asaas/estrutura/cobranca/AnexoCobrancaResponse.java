@@ -1,7 +1,5 @@
 package br.com.model.api_asaas.estrutura.cobranca;
 
-import java.io.File;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
