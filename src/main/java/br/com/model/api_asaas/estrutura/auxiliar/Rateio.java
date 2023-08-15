@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import br.com.model.api_asaas.estrutura.enums.SituacaoRateio;
 import jakarta.annotation.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +30,7 @@ public class Rateio {
 	private Optional<Integer> totalFixedValue;
 	@SerializedName("status")
 	@Expose
-	private String status;
+	private SituacaoRateio status;
 	@SerializedName("refusalReason")
 	@Expose
 	private Optional<Object> refusalReason;

@@ -3,6 +3,8 @@ package br.com.model.api_asaas.estrutura.auxiliar;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import br.com.model.api_asaas.estrutura.enums.MotivoEstorno;
+import br.com.model.api_asaas.estrutura.enums.SituacaoEstorno;
 import jakarta.annotation.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,9 +20,9 @@ public class Estorno {
 
 	@SerializedName("status")
 	@Expose
-	private String status;
+	private SituacaoEstorno status;
 	@SerializedName("reason")
 	@Expose
-	private String reason;
+	private MotivoEstorno reason;
 
 }
