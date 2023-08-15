@@ -1,0 +1,23 @@
+package br.com.model.api_asaas.estrutura.infoFinanceiras;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import jakarta.annotation.Generated;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Generated("jsonschema2pojo")
+public class InfoFinanceirasResponse {
+
+	@SerializedName("balance")
+	@Expose
+	public Double balance;
+
+}

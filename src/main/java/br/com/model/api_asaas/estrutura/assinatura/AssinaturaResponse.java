@@ -10,6 +10,7 @@ import br.com.model.api_asaas.estrutura.auxiliar.Juros;
 import br.com.model.api_asaas.estrutura.auxiliar.Multa;
 import br.com.model.api_asaas.estrutura.auxiliar.Rateio;
 import br.com.model.api_asaas.estrutura.cartao.TokenizacaoCartaoCreditoResponse;
+import br.com.model.api_asaas.estrutura.enums.SituacaoAssinatura;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -59,7 +60,7 @@ public class AssinaturaResponse {
 	public Boolean deleted;
 	@SerializedName("status")
 	@Expose
-	public String status;
+	public SituacaoAssinatura status;
 	@SerializedName("externalReference")
 	@Expose
 	public String externalReference;

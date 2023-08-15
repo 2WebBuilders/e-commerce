@@ -12,6 +12,7 @@ import br.com.model.api_asaas.estrutura.auxiliar.Multa;
 import br.com.model.api_asaas.estrutura.auxiliar.Rateio;
 import br.com.model.api_asaas.estrutura.auxiliar.Reembolsos;
 import br.com.model.api_asaas.estrutura.cartao.TokenizacaoCartaoCreditoResponse;
+import br.com.model.api_asaas.estrutura.enums.SituacaoCobranca;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -61,7 +62,7 @@ public class CobrancaResponse {
 	private Object pixTransaction;
 	@SerializedName("status")
 	@Expose
-	private String status;
+	private SituacaoCobranca status;
 	@SerializedName("description")
 	@Expose
 	private String description;
