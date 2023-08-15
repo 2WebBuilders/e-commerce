@@ -1,4 +1,4 @@
-package br.com.model.api_asaas.estrutura.auxiliar;
+package br.com.model.api_asaas.estrutura.excluido;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
