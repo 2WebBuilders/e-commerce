@@ -1,9 +1,10 @@
-package br.com.model.api_asaas.estrutura.auxiliar.taxas;
+package br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import jakarta.annotation.Generated;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,16 +15,18 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class BoletoTaxa {
+public class TransferenciaTaxa {
 
-	@SerializedName("defaultValue")
+	@SerializedName("monthlyTransfersWithoutFee")
 	@Expose
-	public Double defaultValue;
-	@SerializedName("discountValue")
+	public Integer monthlyTransfersWithoutFee;
+	@SerializedName("ted")
 	@Expose
-	public Double discountValue;
-	@SerializedName("expirationDate")
+	@Valid
+	public TedTaxa ted;
+	@SerializedName("pix")
 	@Expose
-	public String expirationDate;
+	@Valid
+	public Pix__1Taxa pix;
 
 }

@@ -1,4 +1,4 @@
-package br.com.model.api_asaas.estrutura.auxiliar.taxas;
+package br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -14,16 +14,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class NotificacaoTaxa {
+public class BoletoTaxa {
 
-	@SerializedName("phoneCallFeeValue")
+	@SerializedName("defaultValue")
 	@Expose
-	public Double phoneCallFeeValue;
-	@SerializedName("whatsAppFeeValue")
+	public Double defaultValue;
+	@SerializedName("discountValue")
 	@Expose
-	public Double whatsAppFeeValue;
-	@SerializedName("messagingFeeValue")
+	public Double discountValue;
+	@SerializedName("expirationDate")
 	@Expose
-	public Double messagingFeeValue;
+	public String expirationDate;
 
 }

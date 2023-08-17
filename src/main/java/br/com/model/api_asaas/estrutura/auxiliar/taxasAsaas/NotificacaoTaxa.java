@@ -1,10 +1,9 @@
-package br.com.model.api_asaas.estrutura.auxiliar.taxas;
+package br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import jakarta.annotation.Generated;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,15 +14,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class AntecipacaoTaxa {
+public class NotificacaoTaxa {
 
-	@SerializedName("creditCard")
+	@SerializedName("phoneCallFeeValue")
 	@Expose
-	@Valid
-	private CartaoCredito__1Taxa creditCard;
-	@SerializedName("bankSlip")
+	public Double phoneCallFeeValue;
+	@SerializedName("whatsAppFeeValue")
 	@Expose
-	@Valid
-	private BoletoTaxa__1 bankSlip;
+	public Double whatsAppFeeValue;
+	@SerializedName("messagingFeeValue")
+	@Expose
+	public Double messagingFeeValue;
 
 }

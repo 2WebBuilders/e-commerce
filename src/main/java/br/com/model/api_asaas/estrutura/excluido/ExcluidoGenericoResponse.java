@@ -1,4 +1,4 @@
-package br.com.model.api_asaas.estrutura.auxiliar.taxas;
+package br.com.model.api_asaas.estrutura.excluido;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -14,16 +14,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class Pix__1Taxa {
+public class ExcluidoGenericoResponse {
 
-	@SerializedName("feeValue")
+	@SerializedName("deleted")
 	@Expose
-	public Integer feeValue;
-	@SerializedName("discountValue")
+	private Boolean deleted;
+	@SerializedName("id")
 	@Expose
-	public Object discountValue;
-	@SerializedName("expirationDate")
-	@Expose
-	public Object expirationDate;
+	private String id;
 
 }

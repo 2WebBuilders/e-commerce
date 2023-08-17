@@ -1,9 +1,10 @@
-package br.com.model.api_asaas.estrutura.excluido;
+package br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import jakarta.annotation.Generated;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,13 +15,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class ExcluidoResponse {
+public class AntecipacaoTaxa {
 
-	@SerializedName("deleted")
+	@SerializedName("creditCard")
 	@Expose
-	private Boolean deleted;
-	@SerializedName("id")
+	@Valid
+	private CartaoCredito__1Taxa creditCard;
+	@SerializedName("bankSlip")
 	@Expose
-	private String id;
+	@Valid
+	private BoletoTaxa__1 bankSlip;
 
 }

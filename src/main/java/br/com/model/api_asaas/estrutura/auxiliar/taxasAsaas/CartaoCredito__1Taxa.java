@@ -1,4 +1,4 @@
-package br.com.model.api_asaas.estrutura.auxiliar.taxas;
+package br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -14,10 +14,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Generated("jsonschema2pojo")
-public class FaturaTaxa {
+public class CartaoCredito__1Taxa {
 
-	@SerializedName("feeValue")
+	@SerializedName("detachedMonthlyFeeValue")
 	@Expose
-	public Double feeValue;
+	public Integer detachedMonthlyFeeValue;
+	@SerializedName("installmentMonthlyFeeValue")
+	@Expose
+	public Double installmentMonthlyFeeValue;
 
 }
