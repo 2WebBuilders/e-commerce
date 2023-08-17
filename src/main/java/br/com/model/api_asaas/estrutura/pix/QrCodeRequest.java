@@ -3,6 +3,7 @@ package br.com.model.api_asaas.estrutura.pix;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import br.com.model.api_asaas.estrutura.auxiliar.QrCode;
 import jakarta.annotation.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +17,9 @@ import lombok.Setter;
 @Generated("jsonschema2pojo")
 public class QrCodeRequest {
 
+	@SerializedName("qrCode")
+	@Expose
+	public QrCode qrCode;
 	@SerializedName("addressKey")
 	@Expose
 	public String addressKey;
@@ -34,5 +38,8 @@ public class QrCodeRequest {
 	@SerializedName("expirationSeconds")
 	@Expose
 	public Object expirationSeconds;
+	@SerializedName("scheduleDate")
+	@Expose
+	public String scheduleDate;
 
 }

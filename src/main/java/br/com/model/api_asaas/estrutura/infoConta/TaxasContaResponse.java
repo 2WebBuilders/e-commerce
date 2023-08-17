@@ -3,12 +3,12 @@ package br.com.model.api_asaas.estrutura.infoConta;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import br.com.model.api_asaas.estrutura.auxiliar.taxas.AntecipacaoTaxa;
-import br.com.model.api_asaas.estrutura.auxiliar.taxas.FaturaTaxa;
-import br.com.model.api_asaas.estrutura.auxiliar.taxas.NotificacaoTaxa;
-import br.com.model.api_asaas.estrutura.auxiliar.taxas.PagamentoTaxa;
-import br.com.model.api_asaas.estrutura.auxiliar.taxas.RelatorioBureauCreditoTaxa;
-import br.com.model.api_asaas.estrutura.auxiliar.taxas.TransferenciaTaxa;
+import br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas.AntecipacaoTaxa;
+import br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas.FaturaTaxa;
+import br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas.NotificacaoTaxa;
+import br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas.PagamentoTaxa;
+import br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas.RelatorioBureauCreditoTaxa;
+import br.com.model.api_asaas.estrutura.auxiliar.taxasAsaas.TransferenciaTaxa;
 import jakarta.annotation.Generated;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
