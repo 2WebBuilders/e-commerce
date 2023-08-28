@@ -8,10 +8,12 @@ import com.google.gson.annotations.SerializedName;
 import jakarta.annotation.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Generated("jsonschema2pojo")
 public enum SituacaoRateio {
@@ -29,7 +31,7 @@ public enum SituacaoRateio {
 	@SerializedName("RECEIVABLE_UNIT_AFFECTED_BY_EXTERNAL_CONTRACTUAL_EFFECT")
 	RECEIVABLE_UNIT_AFFECTED_BY_EXTERNAL_CONTRACTUAL_EFFECT ("Rateio não executado devido a existência de efeitos de contrato");
 
-	private final String situacao;
+	private String situacao;
 	private final static Map<String, SituacaoRateio> CONSTANTS = new HashMap<String, SituacaoRateio>();
 
 	static {

@@ -8,10 +8,12 @@ import com.google.gson.annotations.SerializedName;
 import jakarta.annotation.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Generated("jsonschema2pojo")
 public enum TiposLancamentos {
@@ -135,7 +137,7 @@ public enum TiposLancamentos {
 	@SerializedName("TRANSFER_FEE")
 	TRANSFER_FEE ("Taxa de transferência via TED ou Pix");
 	
-	private final String tipo;
+	private String tipo;
 	private final static Map<String, TiposLancamentos> CONSTANTS = new HashMap<String, TiposLancamentos>();
 
 	static {

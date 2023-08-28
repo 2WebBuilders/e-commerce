@@ -8,10 +8,12 @@ import com.google.gson.annotations.SerializedName;
 import jakarta.annotation.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Generated("jsonschema2pojo")
 public enum SituacaoCobranca {
